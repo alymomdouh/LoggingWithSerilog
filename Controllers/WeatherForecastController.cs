@@ -31,6 +31,8 @@ namespace LoggingWithSerilog.Controllers
             //})
             //.ToArray();
 
+           // throw new Exception("Failed to retrieve data");
+
             _logger.LogDebug("Inside GetWeatherForecast endpoint");
             var response = Enumerable.Range(1, 5).Select(index => new WeatherForecast
             {
