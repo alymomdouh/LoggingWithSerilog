@@ -38,21 +38,18 @@ namespace SerilogInDot8
                 var app = builder.Build();
 
                 // Configure the HTTP request pipeline.
-                //This ensures that IDummyService is registered into the DI Container of the application.
-                app.MapGet("/", (IDummyService svc) => svc.DoSomething());
                 if (app.Environment.IsDevelopment())
                 {
                     app.UseSwagger();
                     app.UseSwaggerUI();
                 }
 
-                app.UseHttpsRedirection();
-
                 app.UseAuthorization();
 
-
-                app.MapControllers();
-
+                app.UseSerilogRequestLogging();
+                app.UseHttpsRedirection();
+                //  This ensures that IDummyService is registered into the DI Container of the application.
+                app.MapGet("/", (IDummyService svc) => svc.DoSomething());
                 app.Run();
             }
             catch (Exception ex)
