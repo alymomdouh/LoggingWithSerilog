@@ -5,6 +5,8 @@ VisualStudioVersion = 17.4.33205.214
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LoggingWithSerilog", "LoggingWithSerilog.csproj", "{D2182975-9F5B-441E-8D35-35BA277D6A5C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SerilogInDot8", "dotNet8\SerilogInDot8\SerilogInDot8.csproj", "{E4849323-AEBE-410A-A589-B89C4911562A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{D2182975-9F5B-441E-8D35-35BA277D6A5C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D2182975-9F5B-441E-8D35-35BA277D6A5C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D2182975-9F5B-441E-8D35-35BA277D6A5C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E4849323-AEBE-410A-A589-B89C4911562A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E4849323-AEBE-410A-A589-B89C4911562A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E4849323-AEBE-410A-A589-B89C4911562A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E4849323-AEBE-410A-A589-B89C4911562A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
