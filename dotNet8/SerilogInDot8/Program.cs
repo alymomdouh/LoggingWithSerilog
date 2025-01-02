@@ -18,7 +18,13 @@ namespace SerilogInDot8
                 builder.Host.UseSerilog((context, loggerConfiguration) =>
                 {
                     loggerConfiguration.WriteTo.Console();
+
+                    //1- Configuring via appsettings.json (Recommended)
                     loggerConfiguration.ReadFrom.Configuration(context.Configuration);
+
+                    //2- Configuring via Fluent API
+                    loggerConfiguration.MinimumLevel.Warning();
+                    loggerConfiguration.WriteTo.Console();
                 });
                 // Add services to the container.
                 builder.Services.AddTransient<IDummyService, DummyService>();
