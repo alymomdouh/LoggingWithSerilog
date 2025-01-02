@@ -1,5 +1,6 @@
 
 using Serilog;
+using SerilogInDot8.example;
 
 namespace SerilogInDot8
 {
@@ -20,15 +21,19 @@ namespace SerilogInDot8
                     loggerConfiguration.ReadFrom.Configuration(context.Configuration);
                 });
                 // Add services to the container.
+                builder.Services.AddTransient<IDummyService, DummyService>();
 
                 builder.Services.AddControllers();
                 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
+
                 builder.Services.AddEndpointsApiExplorer();
                 builder.Services.AddSwaggerGen();
 
                 var app = builder.Build();
 
                 // Configure the HTTP request pipeline.
+                //This ensures that IDummyService is registered into the DI Container of the application.
+                app.MapGet("/", (IDummyService svc) => svc.DoSomething());
                 if (app.Environment.IsDevelopment())
                 {
                     app.UseSwagger();
